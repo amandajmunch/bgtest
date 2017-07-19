@@ -46,10 +46,10 @@
 			//ADD PREVIOUS CODE HERE
       // console.log('clicked previous');
        $('.carousel-cells').animate({
-            left:  "100%"
+            right:  "-100%"
          }, 500, function () {
             $('article:last-child').prependTo('.carousel-cells');
-            $('.carousel-cells').css('left', '0');
+            $('.carousel-cells').css('right', '0');
             // $('.carousel-cells').addClass('previous');
             // $('.carousel-cells').removeClass('previous');
          });

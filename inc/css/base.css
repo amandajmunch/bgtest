@@ -26,8 +26,8 @@ header{
 	height:400px;
 	overflow:hidden;
 	position:relative;
-
-	/*z-index:1;*/
+  background-image: url('../img/slide-background.jpg');
+	z-index:1;
 }
 
 .page-content .main-carousel .carousel-next,
@@ -153,14 +153,38 @@ li {
 }
 
 
+
+// $('.carousel-cells').animate({
+        //     left: "-100%"
+        // }, 500,
 .next {
-  animation: 30s next;
-  animation-iteration-count: 1;
+ /* -webkit-animation-name: next;
+  -webkit-animation-duration: 1s;*/
+  color: blue;
 }
 
 .previous {
-  animation: 30s previous;
-  animation-iteration-count: 1;
+/*-webkit-animation-name: previous;
+-webkit-animation-duration: 1s;*/
+  color: red;
+}
+
+@-webkit-keyframes cssAnimation-next{
+from {
+left: 0;
+}
+to {
+ left: -100%;
+}
+}
+
+@-webkit-keyframes cssAnimation-previous{
+from {
+left: 0;
+}
+to {
+ left: -100%;
+}
 }
 
 @media only screen and (max-width: 767px) {
