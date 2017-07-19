@@ -12,6 +12,11 @@ header{
 	box-sizing:border-box;
 }
 
+*{
+  margin:0;
+  box-sizing:border-box;
+}
+
 .page-content{
 	padding-top:50px;
 }
@@ -21,7 +26,8 @@ header{
 	height:400px;
 	overflow:hidden;
 	position:relative;
-	z-index:1;
+
+	/*z-index:1;*/
 }
 
 .page-content .main-carousel .carousel-next,
@@ -43,17 +49,21 @@ header{
 }
 
 .page-content .main-carousel .carousel-cells{
-	width:99999px;
+	/*width:99999px;*/
+  width: 100%;
 	height:100%;
-
+  display: inline-flex;
+  /*flex-direction: row;*/
+  position: relative;
 }
 
 .page-content .main-carousel .carousel-cells article{
-	width:100vw;
-	height:100%;
+	width:100%;
+	/*height:100%;*/
+  flex: 1 0 100%;
 	/*float:left;*/
 	display:flex;
-  flex-direction: row;
+  /*flex-direction: row;*/
   justify-content: center;
   align-items: center;
   background-image: url('../img/slide-background.jpg');
@@ -116,7 +126,41 @@ li {
 
 .slide-text h1 {
   font-size: 8vh;
+}
 
+@keyframes next {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+@keyframes previous {
+0% { right: 0%; }
+20% { right: 0%; }
+25% { right: -100%; }
+45% { right: -100%; }
+50% { right: -200%; }
+70% { right: -200%; }
+75% { right: -300%; }
+95% { right: -300%; }
+100% { right: -400%; }
+}
+
+
+.next {
+  animation: 30s next;
+  animation-iteration-count: 1;
+}
+
+.previous {
+  animation: 30s previous;
+  animation-iteration-count: 1;
 }
 
 @media only screen and (max-width: 767px) {
